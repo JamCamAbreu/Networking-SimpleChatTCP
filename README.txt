@@ -1,6 +1,7 @@
 Author: James Cameron Abreu
 Date: 05/05/2018
 Description: Instructions on how to compile and use the 'project1' chat program
+Project Source: https://github.com/JamCamAbreu/Networking-SimpleChatTCP
 
 
 Files:
@@ -14,7 +15,7 @@ Files:
 
 Client Compilation Instructions:
   - In the directory containing the above files, execute the gcc command:
-gcc -Wall client.c -o client
+  gcc -Wall client.c -o client
 
   - An executable called 'client' will be created (execution instructions
     below)

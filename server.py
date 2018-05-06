@@ -1,5 +1,7 @@
 #! /usr/bin/python
 from socket import *
+import signal
+import sys
 
 serverPort = 55851
 serverAddress = ('localhost', serverPort)
@@ -11,6 +13,15 @@ serverName = 'chatServer'
 serverSocket = socket(AF_INET, SOCK_STREAM)
 serverSocket.bind(serverAddress)
 serverSocket.listen(maxQueue)
+
+
+def sigint_handler(signum, frame):
+  serverSocket.close()
+  print " Connection Closed."
+  sys.exit(0)
+
+signal.signal(signal.SIGINT, sigint_handler)
+
 
 while True:
 

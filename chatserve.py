@@ -3,7 +3,13 @@ from socket import *
 import signal
 import sys
 
-serverPort = 55851
+if (len(sys.argv) < 1):
+  print('usage: ./server portNumber')
+  sys.exit(1)
+
+
+
+serverPort = int(sys.argv[1]) # provided by user in command line
 serverAddress = ('localhost', serverPort)
 maxQueue = 1
 

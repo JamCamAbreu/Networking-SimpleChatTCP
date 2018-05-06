@@ -5,19 +5,19 @@ Project Source: https://github.com/JamCamAbreu/Networking-SimpleChatTCP
 
 
 Files:
-  - README.txt:     This file
-  - server.py       Server program, written in python
-  - client.c        Client program, written in C. Needs to be compiled
+  - README.txt:     (This file)
+  - chatserve.py    Server program, written in python
+  - chatclient.c    Client program, written in C. Needs to be compiled
                     (instructions below)
-  - [client]        executable that is generated from C compilation instructions
+  - [chatclient]    executable that is generated from C compilation instructions
 
 
 
 Client Compilation Instructions:
   - In the directory containing the above files, execute the gcc command:
-  gcc -Wall client.c -o client
+  gcc -Wall chatclient.c -o chatclient 
 
-  - An executable called 'client' will be created (execution instructions
+  - An executable called 'chatclient' will be created (execution instructions
     below)
 
 
@@ -25,15 +25,13 @@ Client Compilation Instructions:
 How to use the chat program:
   1. Compile the client code (instructions above) if you haven't already.
 
-  2. Start the server by typing "./server.py". The server will wait for any
-     incoming TCP connections on its socket. 
+  2. Start the server by typing "./chatserve.py 55854". Here, '55854' is an
+     example port number. But you may use any port number. The server will 
+     now wait for any incoming TCP connections on its socket. 
 
-  3. In another terminal window, enter in "./client localhost 55851" The 
-     server and client establish a connection.
-
-    - Note: if that port is already used on your system, you either have to
-      change the port used in the server.py file using vim, or operate on
-      another machine. 
+  3. In another terminal window, enter in "./client localhost 55854" 
+     (Again, here 55854 is an example port number used in the step above.)
+     The server and client establish a connection.
 
   4. The client is prompted to enter their name. (The server always has name
      'server')
